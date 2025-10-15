@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export type HeaderContent = {
-    logoUrl?: string | null;
-    logoAlt?: string | null;
+    logoUrl: string;
+    logoAlt: string;
     phone?: string | number | null;
     primaryCtaLabel?: string | null;
 };
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const defaultHeaderContent: Required<HeaderContent> = {
-    logoUrl: "/SA-WHILL-logo-white%201.svg",
+    logoUrl: "/WHILL-logo.svg",
     logoAlt: "Scootaround powered by WHILL",
     phone: "888-610-6372",
     primaryCtaLabel: "Get a Quote"
@@ -64,7 +64,7 @@ export default function Header({ content }: Props) {
         <header className="relative z-30 bg-white shadow-[0_18px_32px_rgba(14,41,74,0.12)]">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-10">
                 <div className="flex flex-1 items-center gap-6">
-                    <Link href="#" aria-label={merged.logoAlt} className="flex items-center">
+                    <Link href="#" className="flex items-center">
                         <Image
                             src={merged.logoUrl ?? defaultHeaderContent.logoUrl}
                             alt={merged.logoAlt ?? defaultHeaderContent.logoAlt}
